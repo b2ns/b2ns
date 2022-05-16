@@ -1,4 +1,4 @@
-![](https://github.com/b2ns/b2ns/blob/master/gen-recursive-img/screenshot_2022-05-16_22-43-00.png)
+![](https://github.com/b2ns/b2ns/blob/master/screenshot_2022_05_16__23_02_36.png)
 <!-- |![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=b2ns&count_private=true&show_icons=true&theme=vue&hide_border=true)|![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=b2ns&layout=compact&hide_border=true)| -->
 <!-- |-|-| -->
 
