@@ -1,4 +1,4 @@
-![](https://github.com/b2ns/b2ns/blob/master/screenshot_2022_05_16__23_05_23.png)
+![](https://github.com/b2ns/b2ns/blob/master/screenshot_2022_05_16__23_05_44.png)
 <!-- |![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=b2ns&count_private=true&show_icons=true&theme=vue&hide_border=true)|![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=b2ns&layout=compact&hide_border=true)| -->
 <!-- |-|-| -->
 
