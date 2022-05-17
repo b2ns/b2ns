@@ -8,8 +8,15 @@ async function screenshot() {
   await page.goto('https://github.com/b2ns');
   await page.setViewport({
     width: 1080,
-    height: 720,
+    height: 700,
+    deviceScaleFactor: 2,
   });
+  // await page.evaluate(() => {
+    // const counterDOM = document.querySelectorAll('.Counter');
+    // for (const dom of [...counterDOM]) {
+      // dom.innerText = '--';
+    // }
+  // });
 
   await page.screenshot({ path: filename });
   await browser.close();

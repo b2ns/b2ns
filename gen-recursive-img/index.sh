@@ -25,16 +25,16 @@ screenshot() {
 
   node "$scriptRoot/screenshot.js" "$filename"
 
-  IO_info "screenshot$n: $filename"
+  IO_success "screenshot$n: $filename"
 }
 
-changeImgLink() {
+changeReadmeImgLink() {
   local date="$1"
   local readmeFile=""
   readmeFile="$scriptRoot/../README.md"
-  IO_info "changeImgLink $date ..."
+  IO_info "changeReadmeImgLink $date ..."
   sed -i 's/screenshot_.*\.png/screenshot_'"$date"'.png/' "$readmeFile"
-  IO_info "changeImgLink $date done"
+  IO_success "changeReadmeImgLink $date done"
 }
 
 pushRepo() {
@@ -42,8 +42,8 @@ pushRepo() {
   IO_info "pushRepo $date ..."
   git add README.md screenshot*
   git commit -m "screenshot at $date"
-  git push --progress
-  IO_info "pushRepo $date done"
+  git push --quite
+  IO_success "pushRepo $date done"
 }
 
 main() {
@@ -58,14 +58,15 @@ main() {
       sleep "$wait"
     fi
 
+    rm -vf "$scriptRoot/../"screenshot_*.png
+
     date=$(date +%Y_%m_%d__%H_%M_%S)
-    rm screenshot*
 
     screenshot "screenshot_${date}.png" "$((i + 1))"
 
-    changeImgLink "$date"
+    changeReadmeImgLink "$date"
 
-    pushRepo "$date"
+    # pushRepo "$date"
   done
 
   IO_success "Done!"
