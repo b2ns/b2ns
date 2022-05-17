@@ -5,7 +5,7 @@ IFS=$'\n\t'
 # https://github.com/b2ns/libshell
 source libshell
 
-Args_define "-d --depth" "Set the screenshot depth" "<int>" 5
+Args_define "-d --depth" "Set the screenshot depth" "<int>" 1
 Args_define "-h --help" "Show this help"
 Args_parse "$@"
 
@@ -42,7 +42,7 @@ pushRepo() {
   IO_info "pushRepo $date ..."
   git add README.md screenshot*
   git commit -m "screenshot at $date"
-  git push --quite
+  git push --quiet
   IO_success "pushRepo $date done"
 }
 
@@ -66,7 +66,7 @@ main() {
 
     changeReadmeImgLink "$date"
 
-    # pushRepo "$date"
+    pushRepo "$date"
   done
 
   IO_success "Done!"

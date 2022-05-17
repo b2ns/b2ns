@@ -11,12 +11,6 @@ async function screenshot() {
     height: 700,
     deviceScaleFactor: 2,
   });
-  // await page.evaluate(() => {
-    // const counterDOM = document.querySelectorAll('.Counter');
-    // for (const dom of [...counterDOM]) {
-      // dom.innerText = '--';
-    // }
-  // });
 
   await page.screenshot({ path: filename });
   await browser.close();
