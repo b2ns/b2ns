@@ -2,8 +2,7 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# https://github.com/b2ns/libshell
-source libshell
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../node_modules/@b2ns/libshell/libshell.sh"
 
 Args_define "-d --depth" "Set the screenshot depth" "<int>" 1
 Args_define "-h --help" "Show this help"
@@ -14,8 +13,8 @@ if Args_has "-h"; then
   exit 1
 fi
 
-declare scriptRoot=""
-scriptRoot="$(Path_dirpath "${BASH_SOURCE[0]}")"
+declare __dirname=""
+__dirname="$(Path_dirpath "${BASH_SOURCE[0]}")"
 
 screenshot() {
   local filename="$1"
@@ -23,7 +22,7 @@ screenshot() {
 
   IO_info "screenshot$n ..."
 
-  node "$scriptRoot/screenshot.js" "$filename"
+  node "$__dirname/screenshot.js" "$filename"
 
   IO_success "screenshot$n: $filename"
 }
@@ -31,7 +30,7 @@ screenshot() {
 changeReadmeImgLink() {
   local date="$1"
   local readmeFile=""
-  readmeFile="$scriptRoot/../README.md"
+  readmeFile="$__dirname/../README.md"
   IO_info "changeReadmeImgLink $date ..."
   sed -i 's/screenshot_.*\.png/screenshot_'"$date"'.png/' "$readmeFile"
   IO_success "changeReadmeImgLink $date done"
@@ -58,7 +57,7 @@ main() {
       sleep "$wait"
     fi
 
-    rm -vf "$scriptRoot/../"screenshot_*.png
+    rm -vf "$__dirname/../"screenshot_*.png
 
     date=$(date +%Y_%m_%d__%H_%M_%S)
 

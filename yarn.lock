@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@b2ns/libshell@^1.2.0":
+  version "1.2.0"
+  resolved "https://registry.npmmirror.com/@b2ns/libshell/-/libshell-1.2.0.tgz#f370b5a67673329d6e8f48632747663179f554ef"
+  integrity sha512-RQOQqoK7iiFK6TaJUKJ0ZYGRqLtzkE0Aut9Z9aMLg2M8x8BNm4t3S4wYb+2rmgHPomPV6qM66EByIvtSNX7jkA==
+
 "@types/node@*":
   version "17.0.33"
   resolved "https://registry.npmmirror.com/@types/node/-/node-17.0.33.tgz#3c1879b276dc63e73030bb91165e62a4509cd506"

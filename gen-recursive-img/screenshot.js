@@ -1,5 +1,8 @@
 #!/usr/bin/env node
 import puppeteer from 'puppeteer';
+import { dirname, resolve } from 'path';
+import { fileURLToPath } from 'url';
+const __dirname = dirname(fileURLToPath(import.meta.url));
 const filename = process.argv[2];
 
 async function screenshot() {
@@ -12,7 +15,7 @@ async function screenshot() {
     deviceScaleFactor: 2,
   });
 
-  await page.screenshot({ path: filename });
+  await page.screenshot({ path: resolve(__dirname, '..', filename) });
   await browser.close();
 }
 

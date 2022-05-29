@@ -5,6 +5,7 @@
   "author": "b2ns <eminemdsp@163.com>",
   "type": "module",
   "devDependencies": {
+    "@b2ns/libshell": "^1.2.0",
     "puppeteer": "^14.1.0"
   }
 }
