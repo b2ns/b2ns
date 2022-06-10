@@ -3,9 +3,9 @@
 
 
 "@b2ns/libshell@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.npmmirror.com/@b2ns/libshell/-/libshell-1.2.0.tgz#f370b5a67673329d6e8f48632747663179f554ef"
-  integrity sha512-RQOQqoK7iiFK6TaJUKJ0ZYGRqLtzkE0Aut9Z9aMLg2M8x8BNm4t3S4wYb+2rmgHPomPV6qM66EByIvtSNX7jkA==
+  version "1.2.1"
+  resolved "https://registry.npmmirror.com/@b2ns/libshell/-/libshell-1.2.1.tgz#c3a027094f04a59b76b426c7b47c2f461be74e83"
+  integrity sha512-hsc7rQuYiyB05QMdF2ZDErCqKkrwjsSRjb94en3iSFIdg02jWtjEWa9wU27HtsSpR0lkCm3TGXkFWgG8xf1f6Q==
 
 "@types/node@*":
   version "17.0.33"
