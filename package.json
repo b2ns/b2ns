@@ -4,6 +4,9 @@
   "repository": "git@github.com:b2ns/b2ns.git",
   "author": "b2ns <eminemdsp@163.com>",
   "type": "module",
+  "scripts": {
+    "gen": "bash ./gen-recursive-img/index.sh"
+  },
   "devDependencies": {
     "@b2ns/libshell": "^1.2.0",
     "puppeteer": "^14.1.0"

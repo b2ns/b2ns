@@ -4,7 +4,7 @@ IFS=$'\n\t'
 
 source "$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/../node_modules/@b2ns/libshell/libshell.sh"
 
-Args_define "-d --depth" "Set the screenshot depth" "<int>" 1
+Args_define "-d --depth" "Set the screenshot depth" "<int>" 2
 Args_define "-h --help" "Show this help"
 Args_parse "$@"
 
@@ -14,31 +14,31 @@ if Args_has "-h"; then
 fi
 
 declare __dirname=""
-__dirname="$(Path_dirpath "${BASH_SOURCE[0]}")"
+__dirname="$(Path_dirname "${BASH_SOURCE[0]}")"
 
 screenshot() {
   local filename="$1"
   local -i n="$2"
 
-  IO_info "screenshot$n ..."
+  IO_info "screenshot ..."
 
   node "$__dirname/screenshot.js" "$filename"
 
-  IO_success "screenshot$n: $filename"
+  IO_success "screenshot $n: $filename"
 }
 
 changeReadmeImgLink() {
   local date="$1"
   local readmeFile=""
   readmeFile="$__dirname/../README.md"
-  IO_info "changeReadmeImgLink $date ..."
+  IO_info "changeReadmeImgLink ..."
   sed -i 's/screenshot_.*\.png/screenshot_'"$date"'.png/' "$readmeFile"
   IO_success "changeReadmeImgLink $date done"
 }
 
 pushRepo() {
   date="$1"
-  IO_info "pushRepo $date ..."
+  IO_info "pushRepo ..."
   git add README.md screenshot*
   git commit -m "screenshot at $date"
   git push --quiet
